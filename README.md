@@ -35,8 +35,39 @@ cp ENV.sample .env
 
 ### 启动服务
 
+**开发环境：**
+
 ```bash
 npm start
+```
+
+**生产环境（推荐使用PM2）：**
+
+```bash
+# 安装PM2（如果还没安装）
+npm install -g pm2
+
+# 方式1：使用配置文件启动（推荐）
+pm2 start ecosystem.config.js
+
+# 方式2：直接启动
+pm2 start server.js --name chat_with_huzi
+
+# 方式3：通过npm启动
+pm2 start npm --name chat_with_huzi -- start
+```
+
+**PM2 常用命令：**
+
+```bash
+pm2 list              # 查看所有进程
+pm2 logs              # 查看日志
+pm2 stop chat_with_huzi    # 停止应用
+pm2 restart chat_with_huzi # 重启应用
+pm2 delete chat_with_huzi  # 删除应用
+pm2 monit             # 监控
+pm2 save              # 保存当前进程列表
+pm2 startup           # 设置开机自启
 ```
 
 访问 `http://localhost:3000` 即可使用。
@@ -49,10 +80,14 @@ npm start
 │   ├── index.html      # 主页面
 │   ├── styles.css      # 样式文件
 │   ├── app.js          # 前端逻辑
+│   ├── Andalusia.mp3   # 背景音乐
 │   └── assets/         # 资源文件
 ├── server.js           # 后端服务器
+├── ecosystem.config.js # PM2配置文件
 ├── package.json        # 项目配置
-└── .env               # 环境变量（需自行创建）
+├── ENV.sample          # 环境变量示例
+├── .env               # 环境变量（需自行创建）
+└── .gitignore         # Git忽略文件
 ```
 
 ## 🎨 设计特色

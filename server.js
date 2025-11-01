@@ -156,8 +156,9 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on http://0.0.0.0:${PORT}`);
+  console.log(`Access via: http://your-server-ip:${PORT}`);
 });
 
 
