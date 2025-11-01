@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>对话户晨风</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/avatar.png" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="与户晨风对话 - 简洁美观的聊天体验" />
+  <meta name="theme-color" content="#007aff" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img id="avatar" src="/assets/avatar.png" alt="对话户晨风" onerror="this.style.display='none'" />
+      <h1>对话户晨风</h1>
+      <div class="header-actions">
+        <a href="https://zhuzihan.com/" target="_blank" rel="noopener noreferrer" class="blog-link" title="访问作者博客">
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm-1-9h2v2h-2V7zm0 3h2v5h-2v-5z" fill="currentColor"/>
+          </svg>
+          <span>作者博客</span>
+        </a>
+        <button id="musicButton" class="icon-button" aria-label="播放/暂停音乐" aria-pressed="false" title="背景音乐">
+          <svg class="icon icon-play" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M6 4l10 6-10 6V4z" fill="currentColor"/>
+          </svg>
+          <svg class="icon icon-pause" viewBox="0 0 20 20" aria-hidden="true">
+            <rect x="5" y="4" width="3" height="12" rx="1.5" fill="currentColor"/>
+            <rect x="12" y="4" width="3" height="12" rx="1.5" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main class="chat">
+    <ul id="messages" class="messages"></ul>
+    <div class="composer">
+      <textarea id="input" rows="1" placeholder="输入内容，回车发送..." aria-label="消息输入框"></textarea>
+      <button id="send" aria-label="发送消息">
+        <span>发送</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- Markdown 渲染库 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
+
+
